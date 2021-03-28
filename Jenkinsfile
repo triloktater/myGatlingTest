@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage("Build Maven") {
             steps {
-                sh 'mvn -B clean package'
+                powershell 'mvn -B clean package'
             }
         }
         stage("Run Gatling") {
             steps {
-                sh 'mvn gatling:test'
+                powershell 'mvn gatling:test'
             }
             post {
                 always {
