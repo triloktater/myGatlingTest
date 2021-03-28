@@ -1,11 +1,14 @@
 pipeline {
     agent any
     stages {
+        stage("Build Maven") {
+            steps {
+                sh 'mvn -B clean package'
+            }
+        }
         stage("Run Gatling") {
             steps {
-                 withMaven(maven: 'maven-3') {
-                    sh 'mvn gatling:test'
-                 }
+                sh 'mvn gatling:test'
             }
             post {
                 always {
