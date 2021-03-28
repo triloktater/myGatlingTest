@@ -1,12 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage("Build") {
-            steps {
-                sh 'sudo su jenkins -'
-            }
-        }
-
         stage("Build Maven") {
             steps {
                 sh 'mvn -B clean package'
