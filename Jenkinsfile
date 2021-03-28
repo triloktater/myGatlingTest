@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-    stage("Build Maven") {
-                steps {
-                    sh 'whoami'
-                }
+        stage("Build") {
+            steps {
+                sh 'whoami'
             }
+        }
 
         stage("Build Maven") {
             steps {
