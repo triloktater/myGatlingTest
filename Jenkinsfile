@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+    stage("Build Maven") {
+                steps {
+                    sh 'whoami'
+                }
+            }
+
         stage("Build Maven") {
             steps {
                 sh 'mvn -B clean package'
